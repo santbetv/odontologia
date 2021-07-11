@@ -19,3 +19,21 @@ spring:
       password: Colombia12
       hikari:
          poolName: pool
+
+
+#spring:
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    type: com.zaxxer.hikari.HikariDataSource
+#    jdbcUrl: jdbc:h2:mem:ceiba-odontologia;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+#    username: sa
+#    password:
+#    hikari:
+#       poolName: pool
+
+    
+
