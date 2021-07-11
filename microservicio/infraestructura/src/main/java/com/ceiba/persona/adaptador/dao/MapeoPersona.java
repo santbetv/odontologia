@@ -2,11 +2,9 @@ package com.ceiba.persona.adaptador.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.ceiba.cita.modelo.dto.DtoCita;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.persona.modelo.dto.DtoPersona;
 

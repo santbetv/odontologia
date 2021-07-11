@@ -3,7 +3,6 @@ package com.ceiba.persona.adaptador.repositorio;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.persona.modelo.entidad.Persona;
