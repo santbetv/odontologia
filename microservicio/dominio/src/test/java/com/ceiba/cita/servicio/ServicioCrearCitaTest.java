@@ -1,6 +1,7 @@
 package com.ceiba.cita.servicio;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -18,7 +19,7 @@ public class ServicioCrearCitaTest {
 	@Test
 	public void validarCitaFestivosTest() {
 		// arrange
-		CitaTestDataBuilder cita = new CitaTestDataBuilder().conFecha(LocalDate.of(2021, 6, 20));
+		CitaTestDataBuilder cita = new CitaTestDataBuilder().conFecha(LocalDate.of(2021, 7, 20));
 
 		// act - assert
 		BasePrueba.assertThrows(() -> cita.build(), ExcepcionValorInvalido.class,

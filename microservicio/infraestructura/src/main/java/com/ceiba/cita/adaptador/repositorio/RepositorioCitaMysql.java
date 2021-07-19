@@ -13,19 +13,33 @@ public class RepositorioCitaMysql implements RepositorioCita {
 
 	private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
+	
+	
 	@SqlStatement(namespace = "cita", value = "crear")
 	private static String sqlCrear;
 	
 	@SqlStatement(namespace="cita", value="existe")
     private static String sqlExiste;
-
+	
+	@SqlStatement(namespace="cita", value="eliminar")
+    private static String sqlEliminar;
+	
+	public RepositorioCitaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
+		this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
+	}
+	
+	
 	@Override
 	public Long crear(Cita cita) {
 		return this.customNamedParameterJdbcTemplate.crear(cita, sqlCrear);
 	}
-
-	public RepositorioCitaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
-		this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
+	
+	@Override
+	public void eliminar(Long id) {
+		MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+		
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
 	}
 
 	@Override

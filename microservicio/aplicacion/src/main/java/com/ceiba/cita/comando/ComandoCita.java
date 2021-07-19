@@ -17,7 +17,7 @@ public class ComandoCita {
 	private String nombre;
 	private String odontologo;
 	private Integer valor;
-	private LocalDate fechaCreacion;
+	private String fechaCreacion;
 	private Long idPersona;
 
 }

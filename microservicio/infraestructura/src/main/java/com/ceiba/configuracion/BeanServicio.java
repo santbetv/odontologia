@@ -2,6 +2,7 @@ package com.ceiba.configuracion;
 
 import com.ceiba.cita.puerto.repositorio.RepositorioCita;
 import com.ceiba.cita.servicio.ServicioCrearCita;
+import com.ceiba.cita.servicio.ServicioEliminarCita;
 import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 import com.ceiba.persona.servicio.ServicioCrearPersona;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
@@ -32,6 +33,11 @@ public class BeanServicio {
     @Bean
     public ServicioCrearCita servicioCrearCita(RepositorioCita repositorioCita) {
     	return new ServicioCrearCita(repositorioCita);
+    }
+    
+    @Bean
+    public ServicioEliminarCita servicioEliminarCita(RepositorioCita repositorioCita) {
+        return new ServicioEliminarCita(repositorioCita);
     }
 	
     @Bean

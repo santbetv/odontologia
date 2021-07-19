@@ -7,5 +7,7 @@ public interface RepositorioCita {
 	Long crear(Cita cita);
 	
 	boolean existe(String nombre);
+	
+	void eliminar(Long id);
 
 }
