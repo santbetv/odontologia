@@ -24,55 +24,48 @@ public class Cita {
 	private String nombre;
 	private String odontologo;
 	private Integer valor;
-//	private LocalDate fechaCreacion;
 	private String fechaCreacion;
 	private Long idPersona;
-	private Festivos diaFestivo ;
+	private Festivos diaFestivo;
 
-	public Cita(Long id, String nombre, String odontologo, 
-			Integer valor, String fechaCreacion, Long idPersona) {
+	public Cita(Long id, String nombre, String odontologo, Integer valor, String fechaCreacion, Long idPersona) {
 
-		this.diaFestivo = new Festivos(conversionDeFecha( fechaCreacion).getYear());
+		this.diaFestivo = new Festivos(conversionDeFecha(fechaCreacion).getYear());
 		validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_CITA);
 		validarObligatorio(odontologo, SE_DEBE_INGRESAR_EL_NOMBRE_ODONTOLOGO);
 		validarObligatorio(valor, SE_DEBE_INGRESAR_VALOR);
 		validarObligatorio(fechaCreacion, SE_DEBE_INGRESAR_LA_FECHA_CREACION);
 		validarObligatorio(idPersona, SE_DEBE_INGRESAR_LA_RELACION_PERSONA);
 		validarHorario(conversionDeFecha(fechaCreacion), SE_DEBE_INGRESAR_EL_SIGUIENTE_HORARIO_LUNES_A_VIERNES, valor);
-		
-		
+
 		this.id = id;
 		this.nombre = nombre;
 		this.odontologo = odontologo;
-		this.valor=valor;
-		this.fechaCreacion = asignacionFecha(conversionDeFecha(fechaCreacion),1).toString();
+		this.valor = valor;
+		this.fechaCreacion = asignacionFecha(conversionDeFecha(fechaCreacion), 1).toString();
 		this.idPersona = idPersona;
 	}
 
 	private void validarHorario(LocalDate fecha, String mensaje, Integer valor) {
 		boolean validarFestivo = this.diaFestivo.esFestivo(fecha.getMonthValue(), fecha.getDayOfMonth());
 		if (validarFestivo) {
-			throw new ExcepcionValorInvalido(mensaje + " Dia festivo tiene un valor de: " + (valor*2) );
-		}else {
+			throw new ExcepcionValorInvalido(mensaje + " Dia festivo tiene un valor de: " + (valor * 2));
+		} else {
 			validarFinesDeSemana(fecha, mensaje);
 		}
 	}
-	
-	
+
 	public void validarFinesDeSemana(LocalDate fechaActual, String mensaje) {
 		LocalDate resultado = fechaActual;
 		if (resultado.getDayOfWeek() == DayOfWeek.SATURDAY || resultado.getDayOfWeek() == DayOfWeek.SUNDAY) {
 			throw new ExcepcionValorInvalido(mensaje);
-		}	
+		}
 	}
 
-	
-	
 	public LocalDate asignacionFecha(LocalDate fechaActual, int diasAumenta) {
 		LocalDate result = fechaActual;
 		int diasAgregados = 0;
-		
-		
+
 		while (diasAgregados < diasAumenta) {
 			result = result.plusDays(1);
 			boolean validarFestivo = this.diaFestivo.esFestivo(result.getMonthValue(), result.getDayOfMonth());
@@ -85,11 +78,10 @@ public class Cita {
 		}
 		return result;
 	}
-	
-	
-	public LocalDate conversionDeFecha( String sDate) {
-        LocalDate fecha = LocalDate.parse(sDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        return fecha;
+
+	public LocalDate conversionDeFecha(String sDate) {
+		LocalDate fecha = LocalDate.parse(sDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		return fecha;
 	}
 
 }
