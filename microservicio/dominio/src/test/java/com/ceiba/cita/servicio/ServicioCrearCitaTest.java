@@ -1,7 +1,6 @@
 package com.ceiba.cita.servicio;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import org.junit.Test;
 import org.mockito.Mockito;
