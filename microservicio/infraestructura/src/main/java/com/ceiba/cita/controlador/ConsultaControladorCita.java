@@ -4,15 +4,12 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.cita.consulta.ManejadorConsultaCita;
 import com.ceiba.cita.consulta.ManejadorListarCitas;
 import com.ceiba.cita.modelo.dto.DtoCita;
-import com.ceiba.usuario.comando.ComandoUsuario;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
