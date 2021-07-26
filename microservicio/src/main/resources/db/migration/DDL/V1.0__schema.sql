@@ -21,6 +21,7 @@ create table cita (
  valor int not null,
  fecha_creacion date null,
  id_persona int(11) not null,
+ mensaje varchar(100),
  primary key (id),
  CONSTRAINT fk_cita_persona
   FOREIGN KEY (id_persona)

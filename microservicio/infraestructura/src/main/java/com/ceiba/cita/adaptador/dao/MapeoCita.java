@@ -20,8 +20,9 @@ public class MapeoCita implements RowMapper<DtoCita>, MapperResult {
 		Integer valor = rs.getInt("valor");
 		LocalDate fechaCreacion = extraerLocalDate(rs, "fecha_creacion");
 		Long idPersona= rs.getLong("id_persona");
+		String mensajeRespuesta=rs.getString("mensaje");
 
-		return new DtoCita(id, nombre, odontologo, valor, fechaCreacion, idPersona);
+		return new DtoCita(id, nombre, odontologo, valor, fechaCreacion, idPersona,mensajeRespuesta);
 	}
 
 }

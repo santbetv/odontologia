@@ -7,7 +7,6 @@ import com.ceiba.cita.modelo.entidad.Cita;
 
 public class CitaTestDataBuilder {
 
-	private Long id;
 	private String nombre;
 	private String odontologo;
 	private Integer valor;
@@ -38,7 +37,7 @@ public class CitaTestDataBuilder {
 	}
 
 	public Cita build() {
-		return new Cita(id, nombre, odontologo, valor, fechaCreacion, idPersona);
+		return new Cita(nombre, odontologo, valor, fechaCreacion, idPersona);
 	}
 	
 	public String conversionDefechaACaracter(LocalDate date) {

@@ -6,8 +6,7 @@ import java.time.format.DateTimeFormatter;
 import com.ceiba.cita.comando.ComandoCita;
 
 public class ComandoCitaTestDataBuilder {
-
-	private Long id;
+	
 	private String nombre;
 	private String odontologo;
 	private Integer valor;
@@ -38,7 +37,7 @@ public class ComandoCitaTestDataBuilder {
 	}
 
 	public ComandoCita build() {
-		return new ComandoCita(id, nombre, odontologo, valor, fechaCreacion, idPersona);
+		return new ComandoCita(nombre, odontologo, valor, fechaCreacion, idPersona);
 	}
 	
 	public String conversionDefechaACaracter(LocalDate date) {

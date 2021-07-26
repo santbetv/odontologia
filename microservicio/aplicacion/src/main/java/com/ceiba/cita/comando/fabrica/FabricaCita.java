@@ -10,12 +10,7 @@ public class FabricaCita {
 
 	public Cita crear(ComandoCita comandoCita) {
 
-		return new Cita(comandoCita.getId(), 
-				comandoCita.getNombre(), 
-				comandoCita.getOdontologo(), 
-				comandoCita.getValor(),
-				comandoCita.getFechaCreacion(),
-				comandoCita.getIdPersona());
-
+		return new Cita(comandoCita.getNombre(), comandoCita.getOdontologo(), comandoCita.getValor(),
+				comandoCita.getFechaCreacion(), comandoCita.getIdPersona());
 	}
 }

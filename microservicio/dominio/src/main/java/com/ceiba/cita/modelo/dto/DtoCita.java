@@ -15,5 +15,6 @@ public class DtoCita {
 	private Integer valor;
 	private LocalDate fechaCreacion;
 	private Long idPersona;
+	private String mensajeRespuesta;
 
 }

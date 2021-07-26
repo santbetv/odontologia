@@ -10,6 +10,17 @@ server:
       session:
          timeout: 21600s
 
+#spring:
+#   datasource:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      type: com.zaxxer.hikari.HikariDataSource
+#      jdbcUrl: jdbc:mysql://mysql_container/ceiba-odontologia?useSSL=false
+#      username: root
+#      password: secret
+#      hikari:
+#         poolName: pool
+
+
 spring:
    datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver

@@ -11,7 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ComandoCita {
 
-	private Long id;
 	private String nombre;
 	private String odontologo;
 	private Integer valor;

@@ -1,1 +1,1 @@
-insert into cita (nombre, odontologo, valor, fecha_creacion, id_persona) values (:nombre, :odontologo, :valor, :fechaCreacion, :idPersona)
+insert into cita (nombre, odontologo, valor, fecha_creacion, id_persona, mensaje) values (:nombre, :odontologo, :valor, :fechaCreacion, :idPersona, :mensajeRespuesta)
